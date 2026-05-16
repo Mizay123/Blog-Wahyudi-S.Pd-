@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Wahyudi S,Pd | Blog Guru</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+    }
+
+    body{
+      background:#07111f;
+      color:white;
+      overflow-x:hidden;
+    }
+
+    /* Navbar */
+
+    .navbar{
+      position:fixed;
+      width:100%;
+      top:0;
+      z-index:999;
+
+      padding:20px 8%;
+
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+
+      background:rgba(0,0,0,0.3);
+      backdrop-filter:blur(10px);
+    }
+
+    .logo{
+      font-size:26px;
+      font-weight:700;
+      color:#00ffcc;
+    }
+
+    .menu{
+      display:flex;
+      gap:30px;
+      list-style:none;
+    }
+
+    .menu a{
+      color:white;
+      text-decoration:none;
+      transition:0.3s;
+      font-weight:500;
+    }
+
+    .menu a:hover{
+      color:#00ffcc;
+    }
+
+    /* Hero */
+
+    .hero{
+      min-height:100vh;
+
+      display:flex;
+      justify-content:center;
+      align-items:center;
+
+      text-align:center;
+
+      padding:120px 20px;
+
+      background:
+      linear-gradient(rgba(7,17,31,0.8),
+      rgba(7,17,31,0.9)),
+
+      url('https://images.unsplash.com/photo-1513258496099-48168024aec0');
+
+      background-size:cover;
+      background-position:center;
+    }
+
+    .hero-content{
+      max-width:900px;
+      animation:fadeUp 1s ease;
+    }
+
+    .profile{
+      width:170px;
+      height:170px;
+
+      border-radius:50%;
+      object-fit:cover;
+
+      border:5px solid #00ffcc;
+
+      box-shadow:
+      0 0 40px rgba(0,255,204,0.5);
+
+      margin-bottom:30px;
+    }
+
+    .hero h1{
+      font-size:65px;
+      line-height:1.2;
+      margin-bottom:20px;
+    }
+
+    .hero span{
+      color:#00ffcc;
+    }
+
+    .hero p{
+      color:#d1d5db;
+      font-size:20px;
+      line-height:1.8;
+      margin-bottom:40px;
+    }
+
+    .buttons{
+      display:flex;
+      justify-content:center;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      padding:16px 35px;
+
+      border-radius:50px;
+
+      text-decoration:none;
+
+      font-weight:600;
+
+      transition:0.4s;
+    }
+
+    .btn-primary{
+      background:#00ffcc;
+      color:black;
+    }
+
+    .btn-primary:hover{
+      transform:translateY(-5px);
+      box-shadow:0 10px 30px rgba(0,255,204,0.5);
+    }
+
+    .btn-secondary{
+      border:2px solid #00ffcc;
+      color:#00ffcc;
+    }
+
+    .btn-secondary:hover{
+      background:#00ffcc;
+      color:black;
+    }
+
+    /* About */
+
+    .about{
+      padding:120px 8%;
+      background:#0c1626;
+    }
+
+    .title{
+      text-align:center;
+      font-size:50px;
+      margin-bottom:70px;
+    }
+
+    .title span{
+      color:#00ffcc;
+    }
+
+    .about-box{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:60px;
+      align-items:center;
+    }
+
+    .about-img img{
+      width:100%;
+      border-radius:30px;
+    }
+
+    .about-text p{
+      color:#d1d5db;
+      line-height:2;
+      font-size:18px;
+    }
+
+    /* Blog */
+
+    .blog{
+      padding:120px 8%;
+      background:#07111f;
+    }
+
+    .blog-container{
+      display:grid;
+      grid-template-columns:
+      repeat(auto-fit,minmax(300px,1fr));
+
+      gap:35px;
+    }
+
+    .card{
+      background:#111c2d;
+
+      border-radius:25px;
+
+      overflow:hidden;
+
+      transition:0.4s;
+
+      border:1px solid rgba(255,255,255,0.05);
+    }
+
+    .card:hover{
+      transform:translateY(-10px);
+      box-shadow:0 15px 40px rgba(0,0,0,0.5);
+    }
+
+    .card-content{
+      padding:35px;
+    }
+
+    .card h3{
+      font-size:24px;
+      margin-bottom:20px;
+      color:#00ffcc;
+    }
+
+    .card p{
+      color:#d1d5db;
+      line-height:1.8;
+      margin-bottom:25px;
+    }
+
+    .card a{
+      color:#00ffcc;
+      text-decoration:none;
+      font-weight:600;
+    }
+
+    /* Footer */
+
+    footer{
+      background:black;
+      padding:40px;
+      text-align:center;
+    }
+
+    footer p{
+      color:#9ca3af;
+    }
+
+    /* Animation */
+
+    @keyframes fadeUp{
+
+      from{
+        opacity:0;
+        transform:translateY(40px);
+      }
+
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+
+    }
+
+    /* Responsive */
+
+    @media(max-width:900px){
+
+      .about-box{
+        grid-template-columns:1fr;
+      }
+
+      .hero h1{
+        font-size:45px;
+      }
+
+    }
+
+    @media(max-width:600px){
+
+      .navbar{
+        flex-direction:column;
+        gap:15px;
+      }
+
+      .menu{
+        gap:15px;
+        flex-wrap:wrap;
+        justify-content:center;
+      }
+
+      .hero h1{
+        font-size:35px;
+      }
+
+      .hero p{
+        font-size:16px;
+      }
+
+      .profile{
+        width:130px;
+        height:130px;
+      }
+
+      .title{
+        font-size:35px;
+      }
+
+    }
+
+  </style>
+
+</head>
+<body>
+
+  <!-- Navbar -->
+
+  <header class="navbar">
+
+    <div class="logo">
+      Wahyudi S,Pd
+    </div>
+
+    <ul class="menu">
+
+      <li><a href="#">Beranda</a></li>
+      <li><a href="#about">Tentang</a></li>
+      <li><a href="#blog">Blog</a></li>
+      <li><a href="#">Kontak</a></li>
+
+    </ul>
+
+  </header>
+
+  <!-- Hero -->
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <img
+        src="https://files.catbox.moe/d9ge28.jpg"
+        class="profile"
+      >
+
+      <h1>
+        Guru Inspiratif
+        <br>
+        <span>Untuk Masa Depan Bangsa</span>
+      </h1>
+
+      <p>
+        Blog pendidikan modern, portofolio guru,
+        dan ruang berbagi inspirasi pembelajaran.
+      </p>
+
+      <div class="buttons">
+
+        <a
+          href="https://www.instagram.com/wahyudispd8?igsh=MWViMGNrYXRiOXJxeQ=="
+          target="_blank"
+          class="btn btn-primary"
+        >
+          Instagram Saya
+        </a>
+
+        <a
+          href="#blog"
+          class="btn btn-secondary"
+        >
+          Lihat Blog
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- About -->
+
+  <section class="about" id="about">
+
+    <h2 class="title">
+      Tentang <span>Saya</span>
+    </h2>
+
+    <div class="about-box">
+
+      <div class="about-img">
+
+        <img src="https://files.catbox.moe/d9ge28.jpg">
+
+      </div>
+
+      <div class="about-text">
+
+        <p>
+          Saya adalah seorang pendidik yang memiliki
+          semangat untuk terus menginspirasi melalui
+          pendidikan dan pembelajaran modern.
+
+          Website ini menjadi ruang berbagi pengalaman,
+          kegiatan pendidikan, serta perjalanan sebagai
+          guru inspiratif untuk masa depan bangsa.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- Blog -->
+
+  <section class="blog" id="blog">
+
+    <h2 class="title">
+      Blog <span>Pendidikan</span>
+    </h2>
+
+    <div class="blog-container">
+
+      <!-- CARD -->
+
+      <div class="card">
+
+        <div class="card-content">
+
+          <h3>
+            Wardah Inspiring Teacher Gen 8
+          </h3>
+
+          <p>
+            Wujudkan mimpi bersama Wardah Inspiring Teacher
+            Gen 8 untuk mencerdaskan anak bangsa.
+          </p>
+
+          <a
+            href="https://www.instagram.com/reel/DYLubgwPEe_/?igsh=MWRiYWdtcXpjajFxNg=="
+            target="_blank"
+          >
+            Lihat Video →
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- CARD -->
+
+      <div class="card">
+
+        <div class="card-content">
+
+          <h3>
+            Hari Pendidikan Nasional
+          </h3>
+
+          <p>
+            Pendidikan bukan hanya tentang ruang kelas,
+            tetapi tentang harapan masa depan bangsa.
+          </p>
+
+          <a
+            href="https://www.instagram.com/reel/DX1VBpVv-Tf/?igsh=MXJ5NGYyaHZkMXFreQ=="
+            target="_blank"
+          >
+            Lihat Video →
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- CARD -->
+
+      <div class="card">
+
+        <div class="card-content">
+
+          <h3>
+            Simulasi PjBL
+          </h3>
+
+          <p>
+            Pembelajaran kolaboratif dan implementasi
+            Project Based Learning modern.
+          </p>
+
+          <a
+            href="https://www.instagram.com/reel/DXt_rTeD18X/?igsh=MTJ0emJ6MzVlOW00bg=="
+            target="_blank"
+          >
+            Lihat Video →
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- Footer -->
+
+  <footer>
+
+    <p>
+      © 2026 Wahyudi S,Pd - Edu-Inspiring Teacher Gen Z.
+    </p>
+
+  </footer>
+
+</body>
+</html>
